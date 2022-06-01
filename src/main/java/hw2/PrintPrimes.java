@@ -1,8 +1,8 @@
-// Introduction to Software Testing
+package hw2;// Introduction to Software Testing
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 7; page ??
 // Can be run from command line
-// See PrintPrimes.num for a numbered version.
+// See hw2.PrintPrimes.num for a numbered version.
 // No JUnit tests at this time
 
 /** *****************************************************
@@ -78,7 +78,7 @@ public class PrintPrimes
         int integer=5;
 //        if (argv.length != 1)
 //        {
-//            System.out.println ("Usage: java PrintPrimes v1 ");
+//            System.out.println ("Usage: java hw2.PrintPrimes v1 ");
 //            return;
 //        }
 //

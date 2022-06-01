@@ -1,3 +1,6 @@
+package hw1;
+
+import hw1.Homework1;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

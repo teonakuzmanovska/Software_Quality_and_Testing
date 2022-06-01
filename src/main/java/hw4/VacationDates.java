@@ -1,4 +1,4 @@
-//Homework4
+package hw4;//Homework4
 
 public class VacationDates {
     boolean datesAreWorkingDays;

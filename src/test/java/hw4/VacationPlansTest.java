@@ -1,3 +1,8 @@
+package hw4;
+
+import hw4.Person;
+import hw4.VacationDates;
+import hw4.VacationPlans;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
