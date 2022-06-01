@@ -16,6 +16,7 @@ class TicketPriceCalculatorTest {
     public void calculatePriceForOneAdult() {
         List<Passenger> passengers = new ArrayList<>();
         Passenger passenger = new Passenger(20);
+        passenger.setAge(23);
         passengers.add(passenger);
         double price = calculator.calculatePrice(passengers, ADULT_TICKET_PRICE, CHILD_TICKET_PRICE);
         assertEquals(ADULT_TICKET_PRICE, price, 0);
