@@ -33,15 +33,6 @@ class ConferenceTest {
     }
 
     @Test
-    public void addAttendeeToConference() {
-
-        Conference conference = new Conference(5);
-        Person person = new Person("Teona", "Kuzmanovska", STUDENT, 21);
-
-        assertTrue(conference.addAttendeeToConference(person));
-    }
-
-    @Test
     public void addAttendeeToConferenceAboveLimit() {
 
         Conference conference = new Conference(6000);
@@ -49,8 +40,7 @@ class ConferenceTest {
         for (int i = 0; i < conference.getCapacity(); i++)
             conference.addAttendeeToConference(new Person("Teona", "Kuzmanovska", STUDENT, 21));
 
-        assertFalse(conference.addAttendeeToConference(new Person("nikola", "nushev", Role.ORGANIZER, 21)));
-        assertFalse(conference.doubleCapacity());
+        assertFalse(conference.addAttendeeToConference(new Person("Teona", "Teonovska", OTHER, 21)));
 
     }
 
@@ -62,19 +52,15 @@ class ConferenceTest {
         for (int i = 0; i < conference.getCapacity(); i++)
             conference.addAttendeeToConference(new Person("Teona", "Kuzmanovska", STUDENT, 21));
 
-        assertTrue(conference.addAttendeeToConference(new Person("Teona", "Teonovska", Role.ORGANIZER, 21)));
-        assertTrue(conference.doubleCapacity());
+        assertTrue(conference.addAttendeeToConference(new Person("Teona", "Teonovska", OTHER, 21)));
+
     }
 
     @Test
     public void doubleSizeAboveCapacity(){
 
         Conference conference = new Conference(9000);
-//        for (int i = 0; i < conference.getCapacity(); i++)
-//            conference.addAttendeeToConference(new Person("Teona", "Kuzmanovska", STUDENT, 21));
-
         assertFalse(conference.doubleCapacity());
-//        assertTrue(conference.getAttendees().size() > conference.getCapacity()/2);
 
     }
 
@@ -95,6 +81,14 @@ class ConferenceTest {
     }
 
     @Test
+    public void doubleSizeNarrow(){
+
+        Conference conference = new Conference(5000);
+        assertTrue(conference.doubleCapacity());
+
+    }
+
+    @Test
     public void getAttendees() {
         Conference conference = new Conference(10);
         List<Person> personList = new ArrayList<>();
@@ -110,7 +104,6 @@ class ConferenceTest {
     @Test
     public void toStringTest() {
 
-        Conference conference = new Conference(5);
         Person person = new Person("Teona", "Kuzmanovska", STUDENT, 21);
 
         person.setAge(21);
